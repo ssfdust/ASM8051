@@ -9,8 +9,8 @@ check                                                                           
 000C 6003                8             jz found        ;如果为零则跳转到found
 000E A3                  9             inc dptr
 000F D9F7               10             djnz r1, loop
-0011 C083               11     found:  push dph
-0013 C082               12             push dpl
+0011 C082               11     found:  push dpl
+0013 C083               12             push dph
 0015 9020A0             13             mov dptr, #20A0h
 0018 D0E0               14             pop acc
 001A F0                 15             movx @dptr, a

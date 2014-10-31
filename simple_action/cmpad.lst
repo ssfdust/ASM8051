@@ -2,20 +2,23 @@ cmpad                                                                           
                          1             org 0000h
 0000 902000              2             mov dptr, #2000h
 0003 7F00                3             mov r7, #0
-0005 020010              4             ljmp main
-0008 09                  5     COMP:   inc r1
-0009 020017              6             ljmp next
-000C 08                  7     POST:   inc r0
-000D 020017              8             ljmp next
-0010 E0                  9     main:   movx a, @dptr
-0011 60F5               10             jz COMP
-0013 30E7F6             11             jnb a.7, post
-0016 0A                 12             inc r2
-0017 A3                 13     next:   inc dptr
-0018 0F                 14             inc r7
-0019 BF64F4             15             cjne r7, #100, main
-001C 80FE               16             sjmp $
-                        17             end
+0005 7800                4             mov r0, #0      ;r0保存正数的个数，置0
+0007 7900                5             mov r1, #0      ;r1保存零的个数， 置0
+0009 7A00                6             mov r2, #0      ;r2保存负数的个数， 置0
+000B 020016              7             ljmp main
+000E 09                  8     COMP:   inc r1
+000F 02001D              9             ljmp next
+0012 08                 10     POST:   inc r0
+0013 02001D             11             ljmp next
+0016 E0                 12     main:   movx a, @dptr
+0017 60F5               13             jz COMP
+0019 30E7F6             14             jnb a.7, post
+001C 0A                 15             inc r2
+001D A3                 16     next:   inc dptr
+001E 0F                 17             inc r7
+001F BF64F4             18             cjne r7, #100, main
+0022 80FE               19             sjmp $
+                        20             end
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -69,7 +72,7 @@ CKSEL. . . . . . . . . . . . . . . .  D  ADDR  0085H  NOT USED
 CL . . . . . . . . . . . . . . . . .  D  ADDR  00E9H  NOT USED
 CLKREG . . . . . . . . . . . . . . .  D  ADDR  008FH  NOT USED
 CMOD . . . . . . . . . . . . . . . .  D  ADDR  00D9H  NOT USED
-COMP . . . . . . . . . . . . . . . .  C  ADDR  0008H
+COMP . . . . . . . . . . . . . . . .  C  ADDR  000EH
 CPRL2. . . . . . . . . . . . . . . .  B  ADDR  00C8H  NOT USED
 CR . . . . . . . . . . . . . . . . .  B  ADDR  00DEH  NOT USED
 CT2. . . . . . . . . . . . . . . . .  B  ADDR  00C9H  NOT USED
@@ -111,8 +114,8 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
-MAIN . . . . . . . . . . . . . . . .  C  ADDR  0010H
-NEXT . . . . . . . . . . . . . . . .  C  ADDR  0017H
+MAIN . . . . . . . . . . . . . . . .  C  ADDR  0016H
+NEXT . . . . . . . . . . . . . . . .  C  ADDR  001DH
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
 P. . . . . . . . . . . . . . . . . .  B  ADDR  00D0H  NOT USED
@@ -130,7 +133,7 @@ P4M2 . . . . . . . . . . . . . . . .  D  ADDR  00E4H  NOT USED
 P5 . . . . . . . . . . . . . . . . .  D  ADDR  00E8H  NOT USED
 PC . . . . . . . . . . . . . . . . .  B  ADDR  00BEH  NOT USED
 PCON . . . . . . . . . . . . . . . .  D  ADDR  0087H  NOT USED
-POST . . . . . . . . . . . . . . . .  C  ADDR  000CH
+POST . . . . . . . . . . . . . . . .  C  ADDR  0012H
 PPCL . . . . . . . . . . . . . . . .  B  ADDR  00BEH  NOT USED
 PS . . . . . . . . . . . . . . . . .  B  ADDR  00BCH  NOT USED
 PSL. . . . . . . . . . . . . . . . .  B  ADDR  00BCH  NOT USED

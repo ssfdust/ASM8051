@@ -8,8 +8,8 @@ loop:	movx a, @dptr
 	jz found	;如果为零则跳转到found
 	inc dptr
 	djnz r1, loop	
-found:	push dph
-	push dpl
+found:	push dpl
+	push dph
 	mov dptr, #20A0h
 	pop acc
 	movx @dptr, a

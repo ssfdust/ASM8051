@@ -3,27 +3,19 @@ ram2ram                                                                         
 0000 902400              2     main:   mov dptr, #2400h
 0003 7F50                3             mov r7, #50h
 0005 A983                4             mov r1, dph
-0007 A882                5             mov r0, dpl
-0009 E0                  6             movx a, @dptr
-000A 902500              7             mov dptr, #2500h
-000D AA83                8             mov r2, dph
-000F AB82                9             mov r3, dpl
-0011 F0                 10     loop:   movx @dptr, a
-0012 08                 11             inc r0
-0013 0B                 12             inc r3
-0014 8983               13             mov dph, r1
-0016 8882               14             mov dpl, r0
-0018 E0                 15             movx a, @dptr
-0019 8A83               16             mov dph, r2
-001B 8B82               17             mov dpl, r3
-001D DFF2               18             djnz r7, loop
-                        19
-****WARNING: Missing `END' directive
-ASSEMBLY COMPLETE, NO ERRORS FOUND, 1 WARNING
+0007 E0                  5             movx a, @dptr
+0008 902500              6             mov dptr, #2500h
+000B AA83                7             mov r2, dph
+000D F0                  8     loop:   movx @dptr, a
+000E 0582                9             inc dpl
+0010 8983               10             mov dph, r1
+0012 E0                 11             movx a, @dptr
+0013 8A83               12             mov dph, r2
+0015 DFF6               13             djnz r7, loop
+0017 80FE               14             sjmp $
+                        15             end
+ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
-
-ERROR SUMMARY:
-Line 19, WARNING: Missing `END' directive
 
 SYMBOL TABLE:
 ??MCU_8051_IDE . . . . . . . . . . .  N  NUMB  8051H  NOT USED
@@ -116,7 +108,7 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
-LOOP . . . . . . . . . . . . . . . .  C  ADDR  0011H
+LOOP . . . . . . . . . . . . . . . .  C  ADDR  000DH
 MAIN . . . . . . . . . . . . . . . .  C  ADDR  0000H  NOT USED
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
