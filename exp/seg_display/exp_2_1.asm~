@@ -1,4 +1,4 @@
-	org 0000h
+	 org 0000h
 	ljmp main
 	org 0100h
 main:	mov p1, #0dfh
