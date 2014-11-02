@@ -25,5 +25,5 @@ del2:	mov r5, #23
 	djnz r7, del1
 	ret
 tab:	db 48h, 0ebh, 52h, 62h, 0e1h, 64h, 44h, 0eah, 40h, 60h
-	db 0c0h, 45h, 5ch, 43h, 74h, 0d4h
+	db 0c0h, 45h, 5ch, 43h, 54h, 0d4h
 	end

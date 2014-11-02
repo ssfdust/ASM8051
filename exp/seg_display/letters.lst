@@ -1,36 +1,57 @@
-exp_2_3                                                                                                                 PAGE 1
+letters                                                                                                                 PAGE 1
                          1             org 0000h
 0000 020100              2             ljmp main
                          3             org 0100h
 0100 7590DF              4     main:   mov p1, #0dfh
-0103 75A003              5             mov p2, #03h
-                         6
-0106 7900                7             mov r1, #00h
-0108 E9                  8     loop:   mov a, r1
-0109 90012D              9             mov dptr, #tab
-010C 93                 10             movc a, @a+dptr
-010D F580               11             mov p0, a
-010F 120120             12             lcall delay
-0112 09                 13             inc r1
-0113 E5A0               14             mov a, p2
-0115 03                 15             rr a
-0116 F5A0               16             mov p2, a
-0118 E9                 17             mov a, r1
-0119 B40AEC             18             cjne a, #10, loop
-011C E4                 19             clr a
-011D F9                 20             mov r1, a
-011E 80E8               21             sjmp loop
-                        22
-0120 7FC6               23     delay:  mov r7, #198
-0122 7E32               24     del1:   mov r6, #50
-0124 7D17               25     del2:   mov r5, #23
-0126 DDFE               26             djnz r5, $
-0128 DEFA               27             djnz r6, del2
-012A DFF6               28             djnz r7, del1
-012C 22                 29             ret
-012D 48EB5262E1         30     tab:    db 48h, 0ebh, 52h, 62h, 0e1h, 64h, 44h, 0eah, 40h, 60h
-     6444EA4060
-                        31             end
+0103 75A080              5             mov p2, #80h
+0106 7900                6             mov r1, #00h
+0108 E9                  7     loop:   mov a, r1
+0109 900156              8             mov dptr, #letters
+010C 93                  9             movc a, @a+dptr
+010D F580               10             mov p0, a
+010F 120149             11             lcall delay1
+0112 09                 12             inc r1
+0113 E5A0               13             mov a, p2
+0115 03                 14             rr a
+0116 F5A0               15             mov p2, a
+0118 E9                 16             mov a, r1
+0119 B408EC             17             cjne a, #8h, loop
+011C 7590DF             18     all:    mov p1, #0dfh
+011F 75A080             19             mov p2, #80h
+0122 7900               20             mov r1, #00h
+0124 E9                 21     loop1:  mov a, r1
+0125 900156             22             mov dptr, #letters
+0128 93                 23             movc a, @a+dptr
+0129 F580               24             mov p0, a
+012B 12013C             25             lcall delay
+012E 09                 26             inc r1
+012F E5A0               27             mov a, p2
+0131 03                 28             rr a
+0132 F5A0               29             mov p2, a
+0134 E9                 30             mov a, r1
+0135 B408EC             31             cjne a, #8h, loop1
+0138 E4                 32             clr a
+0139 F9                 33             mov r1, a
+013A 80E8               34             sjmp loop1
+                        35
+013C 7F09               36     delay:  mov r7, #9
+013E 7E05               37     del1:   mov r6, #5
+0140 7D02               38     del2:   mov r5, #2
+0142 DDFE               39             djnz r5, $
+0144 DEFA               40             djnz r6, del2
+0146 DFF6               41             djnz r7, del1
+0148 22                 42             ret
+                        43
+0149 7FC6               44     delay1: mov r7, #198
+014B 7E32               45     del3:   mov r6, #50
+014D 7D17               46     del4:   mov r5, #23
+014F DDFE               47             djnz r5, $
+0151 DEFA               48             djnz r6, del4
+0153 DFF6               49             djnz r7, del3
+0155 22                 50             ret
+0156 EB5D474F54         51     letters:db 0ebh, 5dh, 47h, 4fh, 54h, 0e1h, 47h, 49h
+     E14749
+                        52             end
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -45,6 +66,7 @@ ADCLK. . . . . . . . . . . . . . . .  D  ADDR  00F2H  NOT USED
 ADCON. . . . . . . . . . . . . . . .  D  ADDR  00F3H  NOT USED
 ADDH . . . . . . . . . . . . . . . .  D  ADDR  00F5H  NOT USED
 ADDL . . . . . . . . . . . . . . . .  D  ADDR  00F4H  NOT USED
+ALL. . . . . . . . . . . . . . . . .  C  ADDR  011CH  NOT USED
 AUXR . . . . . . . . . . . . . . . .  D  ADDR  008EH  NOT USED
 AUXR1. . . . . . . . . . . . . . . .  D  ADDR  00A2H  NOT USED
 B. . . . . . . . . . . . . . . . . .  D  ADDR  00F0H  NOT USED
@@ -88,9 +110,12 @@ CPRL2. . . . . . . . . . . . . . . .  B  ADDR  00C8H  NOT USED
 CR . . . . . . . . . . . . . . . . .  B  ADDR  00DEH  NOT USED
 CT2. . . . . . . . . . . . . . . . .  B  ADDR  00C9H  NOT USED
 CY . . . . . . . . . . . . . . . . .  B  ADDR  00D7H  NOT USED
-DEL1 . . . . . . . . . . . . . . . .  C  ADDR  0122H
-DEL2 . . . . . . . . . . . . . . . .  C  ADDR  0124H
-DELAY. . . . . . . . . . . . . . . .  C  ADDR  0120H
+DEL1 . . . . . . . . . . . . . . . .  C  ADDR  013EH
+DEL2 . . . . . . . . . . . . . . . .  C  ADDR  0140H
+DEL3 . . . . . . . . . . . . . . . .  C  ADDR  014BH
+DEL4 . . . . . . . . . . . . . . . .  C  ADDR  014DH
+DELAY. . . . . . . . . . . . . . . .  C  ADDR  013CH
+DELAY1 . . . . . . . . . . . . . . .  C  ADDR  0149H
 DP0H . . . . . . . . . . . . . . . .  D  ADDR  0083H  NOT USED
 DP0L . . . . . . . . . . . . . . . .  D  ADDR  0082H  NOT USED
 DP1H . . . . . . . . . . . . . . . .  D  ADDR  0085H  NOT USED
@@ -128,7 +153,9 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
+LETTERS. . . . . . . . . . . . . . .  C  ADDR  0156H
 LOOP . . . . . . . . . . . . . . . .  C  ADDR  0108H
+LOOP1. . . . . . . . . . . . . . . .  C  ADDR  0124H
 MAIN . . . . . . . . . . . . . . . .  C  ADDR  0100H
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
@@ -195,7 +222,6 @@ T0 . . . . . . . . . . . . . . . . .  B  ADDR  00B4H  NOT USED
 T1 . . . . . . . . . . . . . . . . .  B  ADDR  00B5H  NOT USED
 T2CON. . . . . . . . . . . . . . . .  D  ADDR  00C8H  NOT USED
 T2MOD. . . . . . . . . . . . . . . .  D  ADDR  00C9H  NOT USED
-TAB. . . . . . . . . . . . . . . . .  C  ADDR  012DH
 TB8. . . . . . . . . . . . . . . . .  B  ADDR  009BH  NOT USED
 TCLK . . . . . . . . . . . . . . . .  B  ADDR  00CCH  NOT USED
 TCON . . . . . . . . . . . . . . . .  D  ADDR  0088H  NOT USED
