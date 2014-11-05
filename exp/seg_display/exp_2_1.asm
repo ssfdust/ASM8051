@@ -3,7 +3,6 @@
 	org 0100h
 main:	mov p1, #0dfh
 	mov p2, #03h
-
 	mov r1, #00h
 loop:	mov a, r1
 	mov dptr, #tab

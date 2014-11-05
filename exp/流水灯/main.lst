@@ -8,12 +8,12 @@ main                                                                            
 0106 DEFC                7             DJNZ R6, DEL2
 0108 DFF8                8             DJNZ R7, DEL1
 010A 22                  9             RET
-010B C295               10     MAIN:   CLR P1.5
+010B D295               10     MAIN:   setb P1.5
 010D 74FE               11             MOV A, #0FEH
 010F F580               12     LOP:    MOV P0, A
-0111 120100             13             LCALL DELAY
-0114 23                 14             RL A
-0115 80F8               15             SJMP LOP
+                        13             ;LCALL DELAY
+0111 23                 14             RL A
+0112 80FB               15             SJMP LOP
                         16             END
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
@@ -74,7 +74,7 @@ CT2. . . . . . . . . . . . . . . . .  B  ADDR  00C9H  NOT USED
 CY . . . . . . . . . . . . . . . . .  B  ADDR  00D7H  NOT USED
 DEL1 . . . . . . . . . . . . . . . .  C  ADDR  0102H
 DEL2 . . . . . . . . . . . . . . . .  C  ADDR  0104H
-DELAY. . . . . . . . . . . . . . . .  C  ADDR  0100H
+DELAY. . . . . . . . . . . . . . . .  C  ADDR  0100H  NOT USED
 DP0H . . . . . . . . . . . . . . . .  D  ADDR  0083H  NOT USED
 DP0L . . . . . . . . . . . . . . . .  D  ADDR  0082H  NOT USED
 DP1H . . . . . . . . . . . . . . . .  D  ADDR  0085H  NOT USED

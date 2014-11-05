@@ -4,30 +4,29 @@ exp_2_1                                                                         
                          3             org 0100h
 0100 7590DF              4     main:   mov p1, #0dfh
 0103 75A003              5             mov p2, #03h
-                         6
-0106 7900                7             mov r1, #00h
-0108 E9                  8     loop:   mov a, r1
-0109 900128              9             mov dptr, #tab
-010C 93                 10             movc a, @a+dptr
-010D F580               11             mov p0, a
-010F 12011B             12             lcall delay
-0112 09                 13             inc r1
-0113 E9                 14             mov a, r1
-0114 B40AF1             15             cjne a, #10, loop
-0117 E4                 16             clr a
-0118 F9                 17             mov r1, a
-0119 80ED               18             sjmp loop
-                        19
-011B 7FC6               20     delay:  mov r7, #198
-011D 7E32               21     del1:   mov r6, #50
-011F 7D17               22     del2:   mov r5, #23
-0121 DDFE               23             djnz r5, $
-0123 DEFA               24             djnz r6, del2
-0125 DFF6               25             djnz r7, del1
-0127 22                 26             ret
-0128 48EB5262E1         27     tab:    db 48h, 0ebh, 52h, 62h, 0e1h, 64h, 44h, 0eah, 40h, 60h
+0106 7900                6             mov r1, #00h
+0108 E9                  7     loop:   mov a, r1
+0109 900128              8             mov dptr, #tab
+010C 93                  9             movc a, @a+dptr
+010D F580               10             mov p0, a
+010F 12011B             11             lcall delay
+0112 09                 12             inc r1
+0113 E9                 13             mov a, r1
+0114 B40AF1             14             cjne a, #10, loop
+0117 E4                 15             clr a
+0118 F9                 16             mov r1, a
+0119 80ED               17             sjmp loop
+                        18
+011B 7FC6               19     delay:  mov r7, #198
+011D 7E32               20     del1:   mov r6, #50
+011F 7D17               21     del2:   mov r5, #23
+0121 DDFE               22             djnz r5, $
+0123 DEFA               23             djnz r6, del2
+0125 DFF6               24             djnz r7, del1
+0127 22                 25             ret
+0128 48EB5262E1         26     tab:    db 48h, 0ebh, 52h, 62h, 0e1h, 64h, 44h, 0eah, 40h, 60h
      6444EA4060
-                        28             end
+                        27             end
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
