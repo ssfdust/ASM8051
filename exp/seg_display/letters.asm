@@ -48,5 +48,5 @@ del4:	mov r5, #23
 	djnz r6, del4
 	djnz r7, del3
 	ret
-letters:db 0ebh, 5dh, 47h, 4fh, 54h, 0e1h, 47h, 49h
+letters:db 48h, 48h, 48h, 48h, 48h, 0ebh, 62h, 52h
 	end
