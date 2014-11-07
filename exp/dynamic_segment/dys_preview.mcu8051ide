@@ -230,7 +230,7 @@
 		<license><![CDATA[]]></license>
 		<processor type="80C51" clock="12000" xdata="0" xcode="0"/>
 		<options
-			watches_file=""
+			watches_file="exp3.wtc"
 			scheme=""
 			main_file=""
 			auto_sw_enabled="1"
@@ -272,8 +272,8 @@
 		pwin_orient="horizontal">
 
 		<file name="main.asm" active="yes" o_bookmark="0" p_bookmark="0" file_index="0" read_only="0" highlight="0">
-			<actual_line value="18"/>
-			<md5_hash value="006F41F0A91C65CB83F5ED4839573011"/>
+			<actual_line value="62"/>
+			<md5_hash value="72AC34A23DB2DB01B47C77631D7C7FFC"/>
 			<path><![CDATA[]]></path>
 			<bookmarks>
 				0

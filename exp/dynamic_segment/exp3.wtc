@@ -1,0 +1,5 @@
+# Watches definition file -- MCU 8051 IDE v1.4.7
+  1A CNT
+  10 DISP_BUF
+  19 SCN_COD
+  18 SCN_INX
