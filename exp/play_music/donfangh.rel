@@ -252,8 +252,7 @@ A RSEG0 size 0 flags 8 addr 0
 A RSEG1 size 0 flags 8 addr 0
 A REG_BANK_0 size 8 flags 4 addr 0
 A DSEG size 4 flags 0 addr 0
-S G$cyc$0$0 Def000000
-S _cyc Def000000
+S Ldonfangh.main$cyc$1$2 Def000000
 A SSEG size 1 flags 0 addr 0
 S __start__stack Def000000
 A ISEG size 0 flags 0 addr 0
@@ -265,29 +264,30 @@ A XABS size 0 flags 48 addr 0
 A XISEG size 0 flags 40 addr 0
 A HOME size 6 flags 20 addr 0
 S __sdcc_program_startup Def000003
-S A$donfangh$447 Def000000
-S A$donfangh$475 Def000003
+S A$donfangh$446 Def000000
+S A$donfangh$468 Def000003
 A GSINIT0 size 0 flags 20 addr 0
 A GSINIT1 size 0 flags 20 addr 0
 A GSINIT2 size 0 flags 20 addr 0
 A GSINIT3 size 0 flags 20 addr 0
 A GSINIT4 size 0 flags 20 addr 0
 A GSINIT5 size 0 flags 20 addr 0
-A GSINIT size C flags 20 addr 0
-S C$donfangh.c$6$1$0 Def000000
-S A$donfangh$463 Def000000
-S A$donfangh$464 Def000003
-S A$donfangh$465 Def000006
-S A$donfangh$466 Def000009
+A GSINIT size 0 flags 20 addr 0
 A GSFINAL size 3 flags 20 addr 0
-S A$donfangh$468 Def000000
-A CSEG size 1 flags 20 addr 0
+S A$donfangh$461 Def000000
+A CSEG size F flags 20 addr 0
 S C$donfangh.c$7$0$0 Def000000
 S C$donfangh.c$9$1$0 Def000000
 S _main Def000000
-S XG$main$0$0 Def000000
-S A$donfangh$505 Def000000
-S C$donfangh.c$10$1$0 Def000000
+S XG$main$0$0 Def00000E
+S A$donfangh$500 Def000009
+S A$donfangh$503 Def00000C
+S A$donfangh$506 Def00000E
+S C$donfangh.c$11$1$2 Def00000C
+S C$donfangh.c$13$1$2 Def00000E
+S A$donfangh$497 Def000000
+S A$donfangh$498 Def000003
+S A$donfangh$499 Def000006
 S G$main$0$0 Def000000
 A CONST size 0 flags 20 addr 0
 A XINIT size 0 flags 20 addr 0
@@ -310,10 +310,6 @@ T 00 00 00
 R 00 00 00 0E
 T 00 00 00 02 00 00
 R 00 00 00 0E 02 04 00 E7
-T 00 00 00 75 00 00 00 10 75 00 00 01 0E 75
-R 00 00 00 15 F1 21 04 00 05 F1 21 09 00 05
-T 00 00 07 00 00 02 80 75 00 00 03 0C
-R 00 00 00 15 F1 21 03 00 05 F1 21 08 00 05
 T 00 00 00 02 00 03
 R 00 00 00 16 00 04 00 0E
 T 00 00 03
@@ -322,5 +318,7 @@ T 00 00 03 02 00 00
 R 00 00 00 0E 00 04 00 17
 T 00 00 00
 R 00 00 00 17
-T 00 00 00 22
-R 00 00 00 17
+T 00 00 00 75 00 00 00 10 75 00 00 01 0E 75
+R 00 00 00 17 F1 21 04 00 05 F1 21 09 00 05
+T 00 00 07 00 00 02 80 75 00 00 03 0C C2 95 22
+R 00 00 00 17 F1 21 03 00 05 F1 21 08 00 05

@@ -12,6 +12,7 @@ C:   00000000  l_BSEG
 C:   00000000  l_BSEG_BYTES                    
 C:   00000000  l_CABS                          
 C:   00000000  l_CONST                         
+C:   00000000  l_GSINIT                        
 C:   00000000  l_GSINIT1                       
 C:   00000000  l_GSINIT5                       
 C:   00000000  l_IABS                          
@@ -45,7 +46,6 @@ C:   00000001  s_XISEG
 C:   00000001  s_XSEG                          
 C:   00000003  l_GSFINAL                       
 C:   00000003  l_GSINIT0                       
-C:   00000005  l_CSEG                          
 C:   00000006  l_HOME                          
 C:   00000006  s_GSINIT0                       
 C:   00000008  l_REG_BANK_0                    
@@ -53,9 +53,9 @@ C:   00000008  s_REG_BANK_1
 C:   00000009  s_GSINIT1                       
 C:   00000009  s_GSINIT2                       
 C:   0000000A  l_GSINIT2                       
-C:   0000000C  l_GSINIT                        
 C:   0000000C  s_SSEG                          
 C:   00000010  s_REG_BANK_2                    
+C:   00000013  l_CSEG                          
 C:   00000013  s_GSINIT3                       
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
@@ -74,13 +74,13 @@ C:   00000020  s__CODE
 C:   00000022  l_GSINIT3                       
 C:   0000002A  l_GSINIT4                       
 C:   00000035  s_GSINIT4                       
+C:   0000005F  s_GSFINAL                       
 C:   0000005F  s_GSINIT                        
 C:   0000005F  s_GSINIT5                       
-C:   0000006B  s_GSFINAL                       
-C:   0000006E  s_CSEG                          
-C:   00000073  s_CONST                         
-C:   00000073  s_XINIT                         
+C:   00000062  s_CSEG                          
 C:   00000074  l_SSEG                          
+C:   00000075  s_CONST                         
+C:   00000075  s_XINIT                         
 C:   00000080  l_DSEG                          
 C:   00000080  l_IRAM                          
 
@@ -387,8 +387,7 @@ DSEG                                00000000    00000080 =         128. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000008  G$cyc$0$0                          donfangh
-     00000008  _cyc                               donfangh
+     00000008  Ldonfangh.main$cyc$1$2             donfangh
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
 Hexadecimal  [32-Bits]
@@ -410,8 +409,8 @@ HOME                                00000000    00000006 =           6. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   00000000  A$donfangh$447                     donfangh
-C:   00000003  A$donfangh$475                     donfangh
+C:   00000000  A$donfangh$446                     donfangh
+C:   00000003  A$donfangh$468                     donfangh
 C:   00000003  __sdcc_program_startup             donfangh
 ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
 Hexadecimal  [32-Bits]
@@ -461,46 +460,37 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-GSINIT                              0000005F    0000000C =          12. bytes (REL,CON,CODE)
+GSFINAL                             0000005F    00000003 =           3. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   0000005F  A$donfangh$463                     donfangh
-C:   0000005F  C$donfangh.c$6$1$0                 donfangh
-C:   00000062  A$donfangh$464                     donfangh
-C:   00000065  A$donfangh$465                     donfangh
-C:   00000068  A$donfangh$466                     donfangh
+C:   0000005F  A$donfangh$461                     donfangh
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-GSFINAL                             0000006B    00000003 =           3. bytes (REL,CON,CODE)
+CSEG                                00000062    00000013 =          19. bytes (REL,CON,CODE)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-C:   0000006B  A$donfangh$468                     donfangh
+C:   00000062  A$donfangh$497                     donfangh
+C:   00000062  C$donfangh.c$7$0$0                 donfangh
+C:   00000062  C$donfangh.c$9$1$0                 donfangh
+C:   00000062  G$main$0$0                         donfangh
+C:   00000062  _main                              donfangh
+C:   00000065  A$donfangh$498                     donfangh
+C:   00000068  A$donfangh$499                     donfangh
+C:   0000006B  A$donfangh$500                     donfangh
+C:   0000006E  A$donfangh$503                     donfangh
+C:   0000006E  C$donfangh.c$11$1$2                donfangh
+C:   00000070  A$donfangh$506                     donfangh
+C:   00000070  C$donfangh.c$13$1$2                donfangh
+C:   00000070  XG$main$0$0                        donfangh
+C:   00000071  __sdcc_external_startup            _startup
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
-Hexadecimal  [32-Bits]
-
-Area                                    Addr        Size        Decimal Bytes (Attributes)
---------------------------------        ----        ----        ------- ----- ------------
-CSEG                                0000006E    00000005 =           5. bytes (REL,CON,CODE)
-
-      Value  Global                              Global Defined In Module
-      -----  --------------------------------   ------------------------
-C:   0000006E  A$donfangh$505                     donfangh
-C:   0000006E  C$donfangh.c$10$1$0                donfangh
-C:   0000006E  C$donfangh.c$7$0$0                 donfangh
-C:   0000006E  C$donfangh.c$9$1$0                 donfangh
-C:   0000006E  G$main$0$0                         donfangh
-C:   0000006E  XG$main$0$0                        donfangh
-C:   0000006E  _main                              donfangh
-C:   0000006F  __sdcc_external_startup            _startup
-
-ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
 
 Files Linked                              [ module(s) ]
 
@@ -522,7 +512,7 @@ Libraries Linked                          [ object file ]
 /usr/bin/../share/sdcc/lib/small/libsdcc.lib
                                           [ _startup.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
 
 User Base Address Definitions
 

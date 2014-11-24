@@ -1,7 +1,7 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.4.0 #8981 (May 19 2014) (Linux)
-; This file was generated Thu Nov 13 20:22:28 2014
+; This file was generated Thu Nov 13 23:17:30 2014
 ;--------------------------------------------------------
 	.module donfangh
 	.optsdcc -mmcs51 --model-small
@@ -129,7 +129,6 @@
 	.globl _DPL
 	.globl _SP
 	.globl _P0
-	.globl _cyc
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -387,8 +386,8 @@ _TF2	=	0x00cf
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-G$cyc$0$0==.
-_cyc::
+Ldonfangh.main$cyc$1$2==.
+_main_cyc_1_2:
 	.ds 4
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
@@ -458,12 +457,6 @@ __interrupt_vect:
 	.globl __mcs51_genXINIT
 	.globl __mcs51_genXRAMCLEAR
 	.globl __mcs51_genRAMCLEAR
-	C$donfangh.c$6$1$0 ==.
-;	donfangh.c:6: _int cyc[] = {3600, 3200};
-	mov	(_cyc + 0),#0x10
-	mov	(_cyc + 1),#0x0E
-	mov	((_cyc + 0x0002) + 0),#0x80
-	mov	((_cyc + 0x0002) + 1),#0x0C
 	.area GSFINAL (CODE)
 	ljmp	__sdcc_program_startup
 ;--------------------------------------------------------
@@ -481,6 +474,7 @@ __sdcc_program_startup:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'main'
 ;------------------------------------------------------------
+;cyc                       Allocated with name '_main_cyc_1_2'
 ;i                         Allocated to registers 
 ;------------------------------------------------------------
 	G$main$0$0 ==.
@@ -499,8 +493,15 @@ _main:
 	ar1 = 0x01
 	ar0 = 0x00
 	C$donfangh.c$9$1$0 ==.
-;	donfangh.c:9: int i = 1;
-	C$donfangh.c$10$1$0 ==.
+;	donfangh.c:9: _uint cyc[2] = {3600, 3200};
+	mov	(_main_cyc_1_2 + 0),#0x10
+	mov	(_main_cyc_1_2 + 1),#0x0E
+	mov	((_main_cyc_1_2 + 0x0002) + 0),#0x80
+	mov	((_main_cyc_1_2 + 0x0002) + 1),#0x0C
+	C$donfangh.c$11$1$2 ==.
+;	donfangh.c:11: P1_5 = 0;
+	clr	_P1_5
+	C$donfangh.c$13$1$2 ==.
 	XG$main$0$0 ==.
 	ret
 	.area CSEG    (CODE)
